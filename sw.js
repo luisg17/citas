@@ -2,13 +2,13 @@
 const nombreCache = 'apv-v1';
 const archivos = [
     //Para evitar error de ruta colocamos un . es decir la ruta relativa
-    // '/',
-    'index.html',
-    'error.html',
-    'css/bootstrap.css',
-    'css/styles.css',
-    'js/app.js',
-    'js/apv.js'
+    '/citas/',
+    '/citas/index.html',
+    '/citas/error.html',
+    '/citas/css/bootstrap.css',
+    '/citascss/styles.css',
+    '/citas/js/app.js',
+    '/citas/js/apv.js'
 ];
 
 
@@ -27,23 +27,23 @@ self.addEventListener('install', e => {
     )
 });
 
-//Este metodo se ejecuta cuando se activan el service worker
+// //Este metodo se ejecuta cuando se activan el service worker
 
-self.addEventListener('activate', e =>{
-    console.log('Service Worker Activado');
+// self.addEventListener('activate', e =>{
+//     console.log('Service Worker Activado');
 
-    e.waitUntil(
-        caches.keys()
-        .then(keys => {
-            // console.log(keys);
+//     e.waitUntil(
+//         caches.keys()
+//         .then(keys => {
+//             // console.log(keys);
 
-            return Promise.all(
-                keys.filter(key => key !== nombreCache)
-                .map(key => caches.delete(key)) //Borra los demas
-            )
-        })
-    )
-});
+//             return Promise.all(
+//                 keys.filter(key => key !== nombreCache)
+//                 .map(key => caches.delete(key)) //Borra los demas
+//             )
+//         })
+//     )
+// });
 
 self.addEventListener('fetch', (e) => {
     console.log(e.request.url);
