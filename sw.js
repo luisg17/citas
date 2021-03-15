@@ -6,7 +6,7 @@ const archivos = [
     '/citas/index.html',
     '/citas/error.html',
     '/citas/css/bootstrap.css',
-    '/citascss/styles.css',
+    '/citas/css/styles.css',
     '/citas/js/app.js',
     '/citas/js/apv.js'
 ];
